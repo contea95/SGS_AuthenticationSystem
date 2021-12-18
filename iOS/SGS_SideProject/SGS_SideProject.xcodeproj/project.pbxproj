@@ -17,6 +17,8 @@
 		33144A6A276E36CF008CBD2A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A69276E36CF008CBD2A /* LoginController.swift */; };
 		33144A6C276E36DA008CBD2A /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A6B276E36DA008CBD2A /* RegistrationController.swift */; };
 		33144A6E276E3E40008CBD2A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A6D276E3E40008CBD2A /* CustomTextField.swift */; };
+		33144A75276E4B8F008CBD2A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A74276E4B8F008CBD2A /* AuthenticationViewModel.swift */; };
+		33144A77276E5114008CBD2A /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A76276E5114008CBD2A /* EmailValidation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		33144A69276E36CF008CBD2A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		33144A6B276E36DA008CBD2A /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		33144A6D276E3E40008CBD2A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		33144A74276E4B8F008CBD2A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		33144A76276E5114008CBD2A /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		33144A62276E367F008CBD2A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				33144A74276E4B8F008CBD2A /* AuthenticationViewModel.swift */,
+				33144A76276E5114008CBD2A /* EmailValidation.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -209,7 +215,9 @@
 				33144A6E276E3E40008CBD2A /* CustomTextField.swift in Sources */,
 				33144A51276E366C008CBD2A /* ViewController.swift in Sources */,
 				33144A4D276E366C008CBD2A /* AppDelegate.swift in Sources */,
+				33144A77276E5114008CBD2A /* EmailValidation.swift in Sources */,
 				33144A4F276E366C008CBD2A /* SceneDelegate.swift in Sources */,
+				33144A75276E4B8F008CBD2A /* AuthenticationViewModel.swift in Sources */,
 				33144A67276E36B9008CBD2A /* Extensions.swift in Sources */,
 				33144A6C276E36DA008CBD2A /* RegistrationController.swift in Sources */,
 				33144A6A276E36CF008CBD2A /* LoginController.swift in Sources */,
