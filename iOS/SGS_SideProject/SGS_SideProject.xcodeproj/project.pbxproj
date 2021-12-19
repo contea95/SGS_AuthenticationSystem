@@ -19,6 +19,8 @@
 		33144A6E276E3E40008CBD2A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A6D276E3E40008CBD2A /* CustomTextField.swift */; };
 		33144A75276E4B8F008CBD2A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A74276E4B8F008CBD2A /* AuthenticationViewModel.swift */; };
 		33144A77276E5114008CBD2A /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A76276E5114008CBD2A /* EmailValidation.swift */; };
+		33144A79276F2193008CBD2A /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A78276F2193008CBD2A /* Alamofire.swift */; };
+		33144A7B276F2824008CBD2A /* ClientLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A7A276F2824008CBD2A /* ClientLoginController.swift */; };
 		4BFE194A49D50BA0DB711745 /* Pods_SGS_SideProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B27D623B31784F6707F483 /* Pods_SGS_SideProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		33144A6D276E3E40008CBD2A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		33144A74276E4B8F008CBD2A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		33144A76276E5114008CBD2A /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
+		33144A78276F2193008CBD2A /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		33144A7A276F2824008CBD2A /* ClientLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientLoginController.swift; sourceTree = "<group>"; };
 		37B27D623B31784F6707F483 /* Pods_SGS_SideProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SGS_SideProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC45A9EFB1DB4CD5F081407 /* Pods-SGS_SideProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGS_SideProject.debug.xcconfig"; path = "Target Support Files/Pods-SGS_SideProject/Pods-SGS_SideProject.debug.xcconfig"; sourceTree = "<group>"; };
 		BE807FF84FC01749E744584B /* Pods-SGS_SideProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGS_SideProject.release.xcconfig"; path = "Target Support Files/Pods-SGS_SideProject/Pods-SGS_SideProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				33144A68276E36C4008CBD2A /* Authentication */,
+				33144A7A276F2824008CBD2A /* ClientLoginController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				33144A74276E4B8F008CBD2A /* AuthenticationViewModel.swift */,
+				33144A78276F2193008CBD2A /* Alamofire.swift */,
 				33144A76276E5114008CBD2A /* EmailValidation.swift */,
 			);
 			path = ViewModel;
@@ -154,7 +160,6 @@
 				7AC45A9EFB1DB4CD5F081407 /* Pods-SGS_SideProject.debug.xcconfig */,
 				BE807FF84FC01749E744584B /* Pods-SGS_SideProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -285,8 +290,10 @@
 				33144A51276E366C008CBD2A /* ViewController.swift in Sources */,
 				33144A4D276E366C008CBD2A /* AppDelegate.swift in Sources */,
 				33144A77276E5114008CBD2A /* EmailValidation.swift in Sources */,
+				33144A7B276F2824008CBD2A /* ClientLoginController.swift in Sources */,
 				33144A4F276E366C008CBD2A /* SceneDelegate.swift in Sources */,
 				33144A75276E4B8F008CBD2A /* AuthenticationViewModel.swift in Sources */,
+				33144A79276F2193008CBD2A /* Alamofire.swift in Sources */,
 				33144A67276E36B9008CBD2A /* Extensions.swift in Sources */,
 				33144A6C276E36DA008CBD2A /* RegistrationController.swift in Sources */,
 				33144A6A276E36CF008CBD2A /* LoginController.swift in Sources */,

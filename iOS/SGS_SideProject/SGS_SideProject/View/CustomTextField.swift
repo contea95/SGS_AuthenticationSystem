@@ -11,7 +11,7 @@ class CustomTextField: UITextField {
     
     init(placeholder: String) {
         super.init(frame: .zero)
-        
+        autocapitalizationType = .none
         borderStyle = .none
         textColor = .white
         keyboardAppearance = .dark

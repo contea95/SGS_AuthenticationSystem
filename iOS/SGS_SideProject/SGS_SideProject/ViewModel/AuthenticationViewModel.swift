@@ -32,7 +32,7 @@ struct LoginViewModel: AuthenticationViewModel {
     }
     
     var buttonTitleColor: UIColor {
-        return formIsValid ? .white : UIColor(white: 1, alpha: 0.67)
+        return formIsValid ? .white : UIColor(white: 1, alpha: 0.5)
     }
     
     var emailFormIsValid: Bool {
@@ -53,7 +53,7 @@ struct RegistrationViewModel: AuthenticationViewModel {
     }
     
     var buttonTitleColor: UIColor {
-        return formIsValid ? .white : UIColor(white: 1, alpha: 0.67)
+        return formIsValid ? .white : UIColor(white: 1, alpha: 0.5)
     }
     
     var emailFormIsValid: Bool {

@@ -43,6 +43,7 @@ class RegistrationController: UIViewController {
         button.layer.cornerRadius = 5
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitleColor(UIColor(white: 1, alpha: 0.5), for: .normal)
         button.isEnabled = false
         return button
     }()

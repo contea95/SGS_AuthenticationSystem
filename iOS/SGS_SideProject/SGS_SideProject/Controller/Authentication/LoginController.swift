@@ -40,7 +40,9 @@ class LoginController: UIViewController {
         button.layer.cornerRadius = 5
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.setTitleColor(UIColor(white: 1, alpha: 0.5), for: .normal)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -67,6 +69,39 @@ class LoginController: UIViewController {
     }
     
     // MARK: - Actions
+    
+    @objc func handleLogin(sender: UITextField) {
+        // 이메일 형식 체크
+        if isValidEmail(testStr: emailTextField.text!) {
+            // 이메일 형식 OK
+            
+            // Login 체크
+            LoginService(email: emailTextField.text!, password: passwordTextField.text!) { itOK in
+                if itOK == true {
+                    let controller = ClientLoginController()
+                    controller.userEmail = self.emailTextField.text!
+                    self.navigationController?.pushViewController(controller, animated: true)
+                } else {
+                    let alert = UIAlertController(title: "You are not a registered member." , message: "Please Check Email or Password", preferredStyle: .alert)
+                    let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+    
+                    alert.addAction(okButton)
+    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        } else {
+            // 이메일 형식 NO
+            let alert = UIAlertController(title: "The Email Format is not correct." , message: "Please Check Email or Password", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alert.addAction(okButton)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+//        LoginService(email: emailTextField.text!, password: passwordTextField.text!)
+        
+    }
     
     @objc func handleShowSignup() {
         let controller = RegistrationController()
