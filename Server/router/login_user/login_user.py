@@ -1,3 +1,5 @@
+import bcrypt
+import jwt
 from flask import request, jsonify
 
 
@@ -25,24 +27,43 @@ def create_loginuser_endpoint(app, services):
                         if count == 0:
                             db_user_email = i
                             count += 1
-                            print("db email", db_user_email)
-                        else:
+                        elif count == 1:
                             db_user_password = i
-                            print("db password", db_user_password)
-                if (
-                    user_input_email == db_user_email
-                    and user_input_password == db_user_password
-                ):
-                    return jsonify("로그인 완료"), 200
-                # elif user_input_email != db_user_email:
-                #     return jsonify("이메일이 틀렸습니다."), 401
-                # elif (
-                #     user_input_email == db_user_email
-                #     and user_input_password != db_user_password
-                # ):
-                #     return jsonify("비밀번호가 틀렸습니다."), 401
+                            count += 1
+                        else:
+                            db_user_role = i
+                if user_input_email == db_user_email:
+                    if bcrypt.checkpw(
+                        user_input_password.encode("utf-8"),
+                        db_user_password.encode("utf-8"),
+                    ):
+                        if db_user_role == "admin":
+                            return {
+                                "Authorization": jwt.encode(
+                                    {
+                                        "email": db_user_email,
+                                        "password": db_user_password,
+                                        "role": db_user_role,
+                                    },
+                                    "secret",
+                                    algorithm="HS256",
+                                ).decode("utf-8")
+                            }, 200
+                        else:
+                            return {"message": "UserLogin"}, 200
+                    else:
+                        return {"message": "Auth Failed"}, 500
+                else:
+                    return {"message": "User Not Found"}, 404
             else:
-                return jsonify("login error"), 401
-            return "", 200
+                return jsonify("login error"), 404
         except Exception as e:
             return {"login error": str(e)}, 401
+
+    @app.route("/get")
+    def get():
+        header = request.headers.get("Authorization")
+        if header == None:
+            return {"message": "Please Login"}, 404
+        data = jwt.decode(header, "secret", algorithms="HS256")
+        return data, 200

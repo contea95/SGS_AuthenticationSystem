@@ -1,4 +1,5 @@
 from flask import request, jsonify
+import jwt
 
 
 def create_adduser_endpoint(app, services):

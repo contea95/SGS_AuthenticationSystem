@@ -66,7 +66,7 @@ func RegistrationService(email: String, password: String, completion: @escaping 
     }
 }
 
-func LoginService(email: String, password: String, completion: @escaping (_ itOK: Bool) -> Void
+func LoginService(email: String, password: String, completion: @escaping (_ itOK: Int) -> Void
 ) {
     let url = "http://127.0.0.1/loginuser"
     var request = URLRequest(url: URL(string: url)!)
@@ -86,19 +86,26 @@ func LoginService(email: String, password: String, completion: @escaping (_ itOK
     
     // StatusCode 결과
     AF.request(request).responseString() { (response) in
+        print(response)
         switch response.result {
         case .success:
             if let httpStatusCode = response.response?.statusCode {
                 switch(httpStatusCode){
                 case 200:
                     print("로그인 성공!")
-                    completion(true)
+                    completion(200)
                 case 401:
-                    print("이메일이나 비밀번호가 틀림!")
-                    completion(false)
+                    print("로그인 에러")
+                    completion(401)
+                case 404:
+                    print("이메일 주소 틀림!")
+                    completion(404)
+                case 500:
+                    print("비밀번호 틀림!")
+                    completion(500)
                 default:
                     print("디폴트...")
-                    completion(false)
+                    completion(0)
                 }
             }
         case .failure(let error):

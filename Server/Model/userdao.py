@@ -1,4 +1,5 @@
 from sqlalchemy import text
+import bcrypt
 
 
 class UserDao:
@@ -19,6 +20,12 @@ class UserDao:
         return user_id
 
     def insert_user(self, user):
+        crypt_user_password_byte = bcrypt.hashpw(
+            user["password"].encode("utf-8"), bcrypt.gensalt()
+        )
+        crypt_user_password_str = crypt_user_password_byte.decode("utf-8")
+        # print(type(crypt_user_password_str))
+        user["password"] = crypt_user_password_str
         user_id = self.db.execute(
             text(
                 """
@@ -37,10 +44,9 @@ class UserDao:
         user_login = self.db.execute(
             text(
                 """
-                SELECT email, password
+                SELECT email, password, role
                 FROM users
-                WHERE email = :email AND
-                password = :password
+                WHERE email = :email
                 """
             ),
             user,
