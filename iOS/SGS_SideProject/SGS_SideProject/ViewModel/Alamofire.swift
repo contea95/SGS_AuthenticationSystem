@@ -26,8 +26,8 @@ enum APIErrors: Error {
 //        }
 //}
 
-func RegistrationService(email: String, password: String) {
-    let url = "http://127.0.0.1/loginuser"
+func RegistrationService(email: String, password: String, completion: @escaping (_ itOK: Bool) -> Void) {
+    let url = "http://127.0.0.1/adduser"
     var request = URLRequest(url: URL(string: url)!)
     request.httpMethod = "POST"
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -50,10 +50,10 @@ func RegistrationService(email: String, password: String) {
             if let httpStatusCode = response.response?.statusCode {
                 switch(httpStatusCode){
                 case 200:
-                    print("로그인 성공!")
+                    print("회원가입 성공!")
                     completion(true)
-                case 401:
-                    print("이메일이나 비밀번호가 틀림!")
+                case 409:
+                    print("중복된 이메일이 있습니다!!")
                     completion(false)
                 default:
                     print("디폴트...")

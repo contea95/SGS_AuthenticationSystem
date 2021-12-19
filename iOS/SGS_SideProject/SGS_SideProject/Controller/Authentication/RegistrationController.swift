@@ -45,6 +45,7 @@ class RegistrationController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.setTitleColor(UIColor(white: 1, alpha: 0.5), for: .normal)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         return button
     }()
     
@@ -65,6 +66,42 @@ class RegistrationController: UIViewController {
     }
     
     // MARK: - Actions
+    
+    @objc func handleRegistration() {
+        // 이메일 형식 체크
+        if isValidEmail(testStr: emailTextField.text!) {
+            // 이메일 형식 OK
+            
+            // Login 체크
+            RegistrationService(email: emailTextField.text!, password: passwordTextField.text!) { itOK in
+                if itOK == true {
+//                    let controller = ClientLoginController()
+//                    controller.userEmail = self.emailTextField.text!
+//                    self.navigationController?.pushViewController(controller, animated: true)
+                    let alert = UIAlertController(title: "Sign Up Complete!" , message: "Please Login with this account.", preferredStyle: .alert)
+                    let okButton = UIAlertAction(title: "OK", style: .cancel, handler: { _ in self.navigationController?.popViewController(animated: true) })
+                    alert.addAction(okButton)
+    
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "This Email has already been signed up." , message: "Please Use Another Email", preferredStyle: .alert)
+                    let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+    
+                    alert.addAction(okButton)
+    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        } else {
+            // 이메일 형식 NO
+            let alert = UIAlertController(title: "The Email Format is not correct." , message: "Please Check Email or Password", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alert.addAction(okButton)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
     
     @objc func handleShowSignIn() {
         navigationController?.popViewController(animated: true)
