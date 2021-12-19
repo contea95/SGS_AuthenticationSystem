@@ -19,6 +19,7 @@
 		33144A6E276E3E40008CBD2A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A6D276E3E40008CBD2A /* CustomTextField.swift */; };
 		33144A75276E4B8F008CBD2A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A74276E4B8F008CBD2A /* AuthenticationViewModel.swift */; };
 		33144A77276E5114008CBD2A /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33144A76276E5114008CBD2A /* EmailValidation.swift */; };
+		4BFE194A49D50BA0DB711745 /* Pods_SGS_SideProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B27D623B31784F6707F483 /* Pods_SGS_SideProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,9 @@
 		33144A6D276E3E40008CBD2A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		33144A74276E4B8F008CBD2A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		33144A76276E5114008CBD2A /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
+		37B27D623B31784F6707F483 /* Pods_SGS_SideProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SGS_SideProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AC45A9EFB1DB4CD5F081407 /* Pods-SGS_SideProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGS_SideProject.debug.xcconfig"; path = "Target Support Files/Pods-SGS_SideProject/Pods-SGS_SideProject.debug.xcconfig"; sourceTree = "<group>"; };
+		BE807FF84FC01749E744584B /* Pods-SGS_SideProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGS_SideProject.release.xcconfig"; path = "Target Support Files/Pods-SGS_SideProject/Pods-SGS_SideProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BFE194A49D50BA0DB711745 /* Pods_SGS_SideProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +59,8 @@
 			children = (
 				33144A4B276E366C008CBD2A /* SGS_SideProject */,
 				33144A4A276E366C008CBD2A /* Products */,
+				41952CD3FB7679A133E8047C /* Pods */,
+				47E701C5BC3BD2548D5F7DCA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +148,24 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		41952CD3FB7679A133E8047C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AC45A9EFB1DB4CD5F081407 /* Pods-SGS_SideProject.debug.xcconfig */,
+				BE807FF84FC01749E744584B /* Pods-SGS_SideProject.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		47E701C5BC3BD2548D5F7DCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37B27D623B31784F6707F483 /* Pods_SGS_SideProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33144A5D276E366E008CBD2A /* Build configuration list for PBXNativeTarget "SGS_SideProject" */;
 			buildPhases = (
+				7D2DC3902F501C7173BC99D1 /* [CP] Check Pods Manifest.lock */,
 				33144A45276E366C008CBD2A /* Sources */,
 				33144A46276E366C008CBD2A /* Frameworks */,
 				33144A47276E366C008CBD2A /* Resources */,
+				D6C365B73D642ED70DD25509 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +233,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D2DC3902F501C7173BC99D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SGS_SideProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6C365B73D642ED70DD25509 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SGS_SideProject/Pods-SGS_SideProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SGS_SideProject/Pods-SGS_SideProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SGS_SideProject/Pods-SGS_SideProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		33144A45276E366C008CBD2A /* Sources */ = {
@@ -364,6 +433,7 @@
 		};
 		33144A5E276E366E008CBD2A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AC45A9EFB1DB4CD5F081407 /* Pods-SGS_SideProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -392,6 +462,7 @@
 		};
 		33144A5F276E366E008CBD2A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE807FF84FC01749E744584B /* Pods-SGS_SideProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
