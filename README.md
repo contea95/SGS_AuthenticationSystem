@@ -22,16 +22,19 @@
 
 ## 구현화면
 ### 메인화면
-<img src="./document/main.png" width="271" height="600"/>
+
+<img src="./document/main.png" width="350" height="600"/>
 
 ### 회원가입
+
 <img src="./document/signup.gif" width="191" height="400"/>
 
 ### 회원가입 후 DB (비밀번호 암호화)
 ![회원가입DB](./document/sign_up_database.png)
 
 ### 로그인 (유저)
-<img src="./document/login.gif" width="191" height="400"/>
+
+<img src="./document/Login.gif" width="191" height="400"/>
 
 ### 로그인 (어드민)
 - 개발중...
